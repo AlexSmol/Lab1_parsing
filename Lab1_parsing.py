@@ -1,7 +1,11 @@
+import logging
+#from os import 
+from typing import Counter
 import requests
 from bs4 import BeautifulSoup
 import sqlite3
 
+logging.basicConfig(filename='log',filemode='w', format='%(asctime)s - %(message)s')
 
 con=sqlite3.connect(r'Cian/Cian_inform.db')
 cur = con.cursor()
@@ -57,9 +61,19 @@ def parsing_offer(connect_db,var):
         print('Общее число записей',len(temporary_massive))
         temporary_massive=list(set(temporary_massive))
         print('Число уникальных записей', len(temporary_massive))
+        Counter=0
+
         for link in temporary_massive:
-            insert_table(connect_db,parsing_page(link),room)
+            Counter+=1
+            print('Запись', Counter, 'из', len(temporary_massive))
+            try:
+                insert_table(connect_db,parsing_page(link),room)
+            except:
+                logging.error('This is an error insert', exc_info=True)
+                continue
+
             con.commit()
+            
 
     print('Общее число записей',len(var))
     var=list(set(var))
@@ -92,13 +106,23 @@ def insert_table(connect_db,massiv,count_room):
 
 
 
-a=input("Выберите вариант:\n1.Создать таблицу напишите - 1;\n2.Парсинг страниц (только после создания или пересоздания таблицы) - 2\n",)
 
-a=int(a)
-if a==1:    
-    create_table(cur)
-elif a==2:
-    parsing_offer(cur,Apart_link)
 
+flag=1
+while flag==True:
+    try:
+        a=int(input("Выберите вариант:\n1.Создать таблицу напишите - 1;\n2.Парсинг страниц и заполнение таблицы(только после создания или пересоздания таблицы) - 2;\n3.Выход - 3\n",))
+    except:
+        logging.error("Error input a",exc_info=True)
+    
+    if a==1:    
+        create_table(cur)
+        print('\nТаблица создана\n')
+    elif a==2:
+        parsing_offer(cur,Apart_link)
+        print('\nТаблица заполнина\n')
+    elif a==3:
+        flag=0
+        
 
 con.close()
