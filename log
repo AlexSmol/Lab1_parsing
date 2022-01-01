@@ -1,0 +1,112 @@
+2022-01-01 02:57:19,910 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 02:58:38,984 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 48, in parsing_page
+    Information=[ID,Name[0],address[-1]['content'],float(Area[0]),Price[0],Price_currency[0],Phone_Number[0],url]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 50, in parsing_page
+    file_debug_information.write(ID,Name,address,Area,Price,Price_currency,Phone_Number,url,'\n')
+TypeError: TextIOWrapper.write() takes exactly one argument (9 given)
+2022-01-01 03:12:25,440 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 03:14:55,783 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 03:18:16,817 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 03:27:32,880 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 48, in parsing_page
+    Information=[ID,Name[0],address[-1]['content'],float(Area[0]),Price[0],Price_currency[0],Phone_Number[0],url]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 50, in parsing_page
+    file_debug_information.write(ID,Name,address,Area,Price,Price_currency,Phone_Number,url,'\n')
+TypeError: TextIOWrapper.write() takes exactly one argument (9 given)
+2022-01-01 04:17:44,110 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:19:41,542 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:20:18,444 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:26:18,598 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:26:26,904 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:26:48,623 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:27:22,987 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
+2022-01-01 04:29:18,223 - This is an error insert
+Traceback (most recent call last):
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 75, in parsing_offer
+    insert_table(connect_db,parsing_page(link),room)
+  File "C:\Users\Артём\OneDrive\Документы\Lab1_parsing\Lab1_parsing\Lab1_parsing.py", line 109, in insert_table
+    connect_db.execute("INSERT INTO Flat VALUES ("+str(string_massiv)+")")
+sqlite3.IntegrityError: UNIQUE constraint failed: Flat.ID
