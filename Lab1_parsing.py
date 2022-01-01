@@ -10,6 +10,8 @@ logging.basicConfig(filename='log',filemode='w', format='%(asctime)s - %(message
 con=sqlite3.connect(r'Cian/Cian_inform.db')
 cur = con.cursor()
 
+file_debug_information=open('debug.txt', 'w')
+
 site='https://www.cian.ru/cat.php?deal_type=sale&engine_version=2&offer_type=flat&p=1&region=1&room2=1'
 
 Apart_link=[]
@@ -35,15 +37,18 @@ def parsing_page(url):
 
     ID=url.replace('https://www.cian.ru/sale/flat/','').replace('/','')
     Name=[i.text for i in bs_pars.find_all(class_="a10a3f92e9--title--UEAG3")]
-    Area=[i.text.replace('\xa0м²','').replace(',','.') for i in bs_pars.find_all(class_="a10a3f92e9--info-value--bm3DC")]
+    Area=[i.text.replace('\xa0м²','').replace(',','.').replace(' ','') for i in bs_pars.find_all(class_="a10a3f92e9--info-value--bm3DC")]
     Price=[i.text.replace('\xa0', ' ').replace('₽','').replace(' ','') for i in bs_pars.find_all(itemprop='price')] # pulling out the price
     Price_currency=[i['content'] for i in bs_pars.find_all(itemprop='priceCurrency')] # pulling currency
     Phone_Number=[i.text for i in bs_pars.find_all(class_="a10a3f92e9--phone--_OimW")]
     address=[i for i in bs_pars.find_all(itemprop='name')]
     #Descriptor=[i.text.replace('\n',' ') for i in bs_pars.find_all(itemprop="description")]
     
+    try:
+        Information=[ID,Name[0],address[-1]['content'],float(Area[0]),Price[0],Price_currency[0],Phone_Number[0],url]
+    except:
+        file_debug_information.write(ID,Name,address,Area,Price,Price_currency,Phone_Number,url,'\n')
 
-    Information=[ID,Name[0],address[-1]['content'],float(Area[0]),Price[0],Price_currency[0],Phone_Number[0],url]
     return Information
 
 
@@ -70,6 +75,7 @@ def parsing_offer(connect_db,var):
                 insert_table(connect_db,parsing_page(link),room)
             except:
                 logging.error('This is an error insert', exc_info=True)
+                logging.info('This is an error insert', exc_info=True)
                 continue
 
             con.commit()
@@ -124,5 +130,5 @@ while flag==True:
     elif a==3:
         flag=0
         
-
+file_debug_information.close()
 con.close()
